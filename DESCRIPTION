@@ -1,4 +1,4 @@
-Package: readbitmapimages
+Package: readbitmap
 Maintainer: Gregory Jefferis <jefferis@gmail.com>
 License: GPL (>=2)
 Title: Read bitmap images (BMP,JPEG,PNG) without external dependencies

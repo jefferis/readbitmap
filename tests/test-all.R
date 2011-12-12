@@ -1,4 +1,4 @@
 library(testthat)
-library(readbitmapimages)
+library(readbitmap)
 
-test_package("readbitmapimages")
+test_package("readbitmap")
