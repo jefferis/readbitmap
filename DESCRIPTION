@@ -5,8 +5,8 @@ Title: Read bitmap images (BMP,JPEG,PNG) without external dependencies
 Author: Gregory Jefferis
 Description: Identifies and reads Windows BMP, JPEG and PNG format bitmap
     images. Identification defaults to the use of a magic embedded in the file
-    rather than the file extension. Depends only on R packages without external
-    dependencies.
+    rather than the file extension. jpeg and png packages depend on libjpg and
+    libpng libraries but these are nearly always present on unix-like systems.
 Version: 0.1
 Date: 11 Dec 2011
 Depends:
