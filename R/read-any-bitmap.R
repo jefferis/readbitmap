@@ -1,17 +1,16 @@
-# TODO: Add comment
-# 
-# Author: jefferis
+# Functions to identify and read a variety of bitmap image formats.
 ###############################################################################
-require(jpeg)
-require(png)
 
-#' Identify the type of an image using an initial magic value 
+#' Identify the type of an image using the magic value at the start of the file 
 #'
-#' Will seek to start of file
 #' Currently works for png, jpeg and BMP images.
+#' Will seek to start of file if passed a connection.
+#' For details of magic values for files, see e.g. 
+#' http://en.wikipedia.org/wiki/Magic_number_(programming)#Magic_numbers_in_files
 #' @param source Path to file or connection
 #' @param Verbose Whether to write a message to console on failure (Default F)
-#' @return character value corresponding to standard file extension of image format (i.e. jpg, png, bmp)
+#' @return character value corresponding to standard file extension of 
+#'   image format (i.e. jpg, png, bmp)
 #' @export
 image_type<-function(source,Verbose=FALSE){
   if (inherits(source, "connection")) 
@@ -34,23 +33,29 @@ image_type<-function(source,Verbose=FALSE){
 #'
 #' By default uses magic byte to identify file 
 #'   (rather than the file extension)
+#' Currently uses readers in bmp, jpeg and png packages.
 #' @param f Path to image file
-#' @param channel Channel to return for RGB image
+#' @param channel Integer identifying channel to return for an RGB image
 #' @param IdentifyByExtension Identify by file extension only (Default FALSE)
+#' @param ... Additional parameters passed to underlying image readers
 #' @return return value
 #' @export
-#' @seealso \code{\link[jpeg]{readJPEG}},\code{\link[png]{readPNG}}
-read.bitmap<-function(f,channel,IdentifyByExtension=FALSE){
+#' @seealso \code{\link[jpeg]{readJPEG},\link[png]{readPNG},\link[bmp]{read.bmp}}
+read.bitmap<-function(f,channel,IdentifyByExtension=FALSE,...){
   
-	ext=tolower(sub(".*\\.([^.]+)$","\\1",f))
 	if(!file.exists(f)) stop("File: ",f," does not exist.")
-  if(!IdentifyByExtension) ext=image_type(f)
+	
+  if(IdentifyByExtension) 
+    ext=tolower(sub(".*\\.([^.]+)$","\\1",f))
+  else
+    ext=image_type(f)
+  
 	if(ext=='png'){
-		im=readPNG(f)
+		im=readPNG(f,...)
 	} else if (ext == 'jpeg' || ext == 'jpg'){
-		im=readJPEG(f)
+		im=readJPEG(f,...)
 	} else if (ext == 'bmp'){
-		im=read.bmp(f)
+		im=read.bmp(f,...)
 	} else {
 		stop("File f: ",f," does not appear to be a PNG, BMP or JPEG")
 	}
