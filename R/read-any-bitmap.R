@@ -31,18 +31,20 @@ image_type<-function(source,Verbose=FALSE){
 }
 
 #' Read in a bitmap image in JPEG, PNG or BMP format
-#' 
+#'
+#' By default uses magic byte to identify file 
+#'   (rather than the file extension)
 #' @param f Path to image file
 #' @param channel Channel to return for RGB image
-#' @param IdentifyByMagic Identify by magic bytes at start of file.
+#' @param IdentifyByExtension Identify by file extension only (Default FALSE)
 #' @return return value
 #' @export
 #' @seealso \code{\link[jpeg]{readJPEG}},\code{\link[png]{readPNG}}
-read.bitmap<-function(f,channel,IdentifyByMagic=FALSE){
+read.bitmap<-function(f,channel,IdentifyByExtension=FALSE){
   
 	ext=tolower(sub(".*\\.([^.]+)$","\\1",f))
 	if(!file.exists(f)) stop("File: ",f," does not exist.")
-  if(IdentifyByMagic) ext=image_type(f)
+  if(!IdentifyByExtension) ext=image_type(f)
 	if(ext=='png'){
 		im=readPNG(f)
 	} else if (ext == 'jpeg' || ext == 'jpg'){
