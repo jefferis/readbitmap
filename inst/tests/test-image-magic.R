@@ -11,9 +11,9 @@ test_that("image_type identifies bmps", {
           equals('bmp'))
     })
 
-test_that("image_type returns NA for pnms", {
+test_that("image_type returns NA_character_ for pnms", {
       expect_that(image_type("../images/real.pnm"),
-          equals(NA))
+          equals(NA_character_))
     })
 
 test_that("image_type identifies pngs", {

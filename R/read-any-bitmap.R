@@ -10,7 +10,7 @@
 #' @param source Path to file or connection
 #' @param Verbose Whether to write a message to console on failure (Default F)
 #' @return character value corresponding to standard file extension of 
-#'   image format (i.e. jpg, png, bmp)
+#'   image format (i.e. jpg, png, bmp) or NA_character_ on failure.
 #' @export
 image_type<-function(source,Verbose=FALSE){
   if (inherits(source, "connection")) 
@@ -26,7 +26,7 @@ image_type<-function(source,Verbose=FALSE){
   # otherwise we failed to identify the file
   if(Verbose) warning("Failed to identify image type of: ",source,
         ' with magic: ',format.hexmode(as.raw(magic)))
-  return(NA)
+  return(NA_character_)
 }
 
 #' Read in a bitmap image in JPEG, PNG or BMP format
