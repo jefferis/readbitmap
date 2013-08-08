@@ -49,15 +49,11 @@ read.bitmap<-function(f,channel,IdentifyByExtension=FALSE,...){
     ext=tolower(sub(".*\\.([^.]+)$","\\1",f))
   else
     ext=image_type(f)
-  if(ext=='png'){
-    im=readPNG(f,...)
-  } else if (ext == 'jpeg' || ext == 'jpg'){
-    im=readJPEG(f,...)
-  } else if (ext == 'bmp'){
-    im=read.bmp(f,...)
-  } else {
-    stop("File f: ",f," does not appear to be a PNG, BMP or JPEG")
-  }
+  
+  readfun=switch(ext,png=readPNG,jpeg=readJPEG,jpg=readJPEG,bmp=read.bmp,
+      stop("File f: ",f," does not appear to be a PNG, BMP or JPEG"))
+  im=readfun(f,...)
+  
   if(!missing(channel) && length(dim(im))==3) im=im[,,channel]
   im
 }

@@ -24,13 +24,15 @@ test_that("read.bitmap can load a bmp pretending to be a jpg", {
 
 test_that("read.bitmap errors out loading fake bmp when identifying by extension", {
       jpgfile="../images/bmp-pretending-to-be.jpg"
-      expect_that(read.bitmap(jpgfile, IdentifyByExtension = TRUE),throws_error())
+      expect_that(read.bitmap(jpgfile, IdentifyByExtension = TRUE),
+          throws_error('Not a JPEG file'))
     })
 
 test_that("read.bitmap errors out loading a pnm file (not implemented)", {
       imgfile="../images/real.pnm"
       expect_that(read.bitmap(imgfile),throws_error())
-      expect_that(read.bitmap(imgfile, IdentifyByExtension = TRUE),throws_error())
+      expect_that(read.bitmap(imgfile, IdentifyByExtension = TRUE),
+          throws_error('does not appear to be a'))
     })
 
 test_that("read.bitmap can load a real jpeg identified by extension", {
