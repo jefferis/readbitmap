@@ -1,0 +1,7 @@
+readbitmap 0.1-1
+==============
+* Give appropriate error message when trying to read unsupported file.
+
+readbitmap 0.1
+==============
+* first version on CRAN
