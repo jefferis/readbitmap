@@ -1,3 +1,7 @@
+readbitmap 0.1-2
+==============
+* Update README.md for CRAN
+
 readbitmap 0.1-1
 ==============
 * Give appropriate error message when trying to read unsupported file.
