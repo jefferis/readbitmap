@@ -22,6 +22,13 @@ By default uses magic byte to identify file
   (rather than the file extension)
 Currently uses readers in bmp, jpeg and png packages.
 }
+\examples{
+img1=read.bitmap(system.file("img", "Rlogo.jpg", package="jpeg"))
+str(img1)
+img2 <- read.bitmap(system.file("img", "Rlogo.png", package="png"))
+# nb the PNG image has an alpha channel
+str(img2)
+}
 \seealso{
 \code{\link[jpeg]{readJPEG},\link[png]{readPNG},\link[bmp]{read.bmp}}
 }

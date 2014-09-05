@@ -20,4 +20,12 @@ Will seek to start of file if passed a connection.
 For details of magic values for files, see e.g.
 http://en.wikipedia.org/wiki/Magic_number_(programming)#Magic_numbers_in_files
 }
+\examples{
+jpegfile=system.file("img", "Rlogo.jpg", package="jpeg")
+image_type(jpegfile)
+jpeg_pretending_to_be_png=tempfile(fileext = '.png')
+file.copy(jpegfile, jpeg_pretending_to_be_png)
+image_type(jpeg_pretending_to_be_png)
+unlink(jpeg_pretending_to_be_png)
+}
 
