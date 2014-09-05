@@ -1,7 +1,7 @@
 Package: readbitmap
 Maintainer: Gregory Jefferis <jefferis@gmail.com>
 License: GPL (>=2)
-Title: Simple unified interface to read bitmap images (BMP,JPEG,PNG)
+Title: Simple Unified Interface to Read Bitmap Images (BMP,JPEG,PNG)
 Author: Gregory Jefferis
 Description: Identifies and reads Windows BMP, JPEG and PNG format bitmap
     images. Identification defaults to the use of a magic embedded in the file
