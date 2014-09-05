@@ -9,6 +9,8 @@ Description: Identifies and reads Windows BMP, JPEG and PNG format bitmap
     libpng libraries but these are nearly always present on unix-like systems.
 Version: 0.1-2
 Date: 2013-09-27
+URL: https://github.com/jefferis/readbitmap
+BugReports: https://github.com/jefferis/readbitmap/issues
 Depends:
     bmp,
     jpeg,
