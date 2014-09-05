@@ -16,5 +16,3 @@ Depends:
 Suggests:
     pixmap,
     testthat
-Collate:
-    'read-any-bitmap.R'
