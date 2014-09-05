@@ -2,6 +2,7 @@ readbitmap 0.1-3
 ================
 * Import rather than depend on bmp/jpeg/png packages
 * (and in so doing fix check error due to missing imports)
+* clarify system requirements in DESCRIPTION
 * add basic package docs
 * dev: move tests to new location to make their installation optional
 * dev: upgrade to roxygen2 v4
