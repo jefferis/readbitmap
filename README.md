@@ -13,13 +13,16 @@ Installation
 ============
 Regular CRAN Install
 --------------------
-    install.packages('readbitmap')
+```r
+install.packages('readbitmap')
+```
 
 Latest Version
 --------------
-    install.packages('devtools')
-    library(devtools)
-    install_github('readbitmap','jefferis')
+```r
+if (!require("devtools")) install.packages("devtools")
+devtools::install_github('readbitmap','jefferis')
+```
 
 Dependencies
 ------------
