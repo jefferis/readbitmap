@@ -39,6 +39,9 @@ image_type<-function(source,Verbose=FALSE){
 #' @param IdentifyByExtension Identify by file extension only (Default FALSE)
 #' @param ... Additional parameters passed to underlying image readers
 #' @return return value
+#' @importFrom png readPNG
+#' @importFrom jpeg readJPEG
+#' @importFrom bmp read.bmp
 #' @export
 #' @seealso \code{\link[jpeg]{readJPEG},\link[png]{readPNG},\link[bmp]{read.bmp}}
 read.bitmap<-function(f,channel,IdentifyByExtension=FALSE,...){

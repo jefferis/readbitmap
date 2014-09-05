@@ -1,7 +1,9 @@
 context("Reading images with read.bitmap")
 
-require(pixmap)
-require(jpeg)
+library(pixmap)
+library(jpeg)
+library(bmp)
+library(png)
 
 test_that("read.bitmap can load real bmp, jpg, png files", {
       imgfile="../images/real.bmp"
