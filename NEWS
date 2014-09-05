@@ -1,3 +1,10 @@
+readbitmap 0.1-4
+================
+* examples for image_type, read.bitmap
+* some tidying of DESCRIPTION in response to comments from Brian Ripley
+* Add an INSTALL file with improved details about installing libpng/libjpeg 
+  system libraries when necessary (almost never)
+
 readbitmap 0.1-3
 ================
 * Import rather than depend on bmp/jpeg/png packages
