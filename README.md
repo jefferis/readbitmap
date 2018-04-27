@@ -40,7 +40,7 @@ The winbuilder libraries are part of a collection provied by Brian Ripley at:
 
   http://www.stats.ox.ac.uk/pub/Rtools/goodies/multilib/
 
-file local300.zip. 
+The file is called `local323.zip` at the time of writing.
 
 For windows users building from source, the libraries are part of the Rtools
 bundle available at:
