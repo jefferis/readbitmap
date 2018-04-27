@@ -1,22 +1,24 @@
 Package: readbitmap
 Maintainer: Gregory Jefferis <jefferis@gmail.com>
 License: GPL (>=2)
-Title: Simple Unified Interface to Read Bitmap Images (BMP,JPEG,PNG)
+Title: Simple Unified Interface to Read Bitmap Images (BMP,JPEG,PNG,TIFF)
 Author: Gregory Jefferis
-Description: Identifies and reads Windows BMP, JPEG and PNG format bitmap
+Description: Identifies and reads Windows BMP, JPEG, PNG, and TIFF format bitmap
     images. Identification defaults to the use of the magic number embedded in
     the file rather than the file extension. Reading of JPEG and PNG image
     depends on libjpg and libpng libraries. See file INSTALL for details if
     necessary.
-Version: 0.1-4
-Date: 2014-09-05
+Version: 0.1-4.9000
+Date: 2018-04-30
 URL: https://github.com/jefferis/readbitmap
 BugReports: https://github.com/jefferis/readbitmap/issues
 SystemRequirements: libjpeg, libpng
 Imports:
     bmp,
     jpeg,
-    png
+    png,
+    tiff
 Suggests:
     pixmap,
     testthat
+RoxygenNote: 6.0.1
