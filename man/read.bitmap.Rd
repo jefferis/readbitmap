@@ -33,4 +33,3 @@ str(img2)
 \seealso{
 \code{\link[jpeg]{readJPEG},\link[png]{readPNG},\link[bmp]{read.bmp}}
 }
-

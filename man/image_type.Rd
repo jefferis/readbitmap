@@ -29,4 +29,3 @@ file.copy(jpegfile, jpeg_pretending_to_be_png)
 image_type(jpeg_pretending_to_be_png)
 unlink(jpeg_pretending_to_be_png)
 }
-

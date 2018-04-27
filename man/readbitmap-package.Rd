@@ -2,8 +2,8 @@
 % Please edit documentation in R/readbitmap-package.R
 \docType{package}
 \name{readbitmap-package}
-\alias{readbitmap}
 \alias{readbitmap-package}
+\alias{readbitmap}
 \title{readbitmap: read standard bitmap image formats}
 \description{
 The readbitmap package enables users to read the three main general purpose 
@@ -19,4 +19,3 @@ extension.
 \code{\link{image_type}}, \code{\link{read.bitmap}}
 }
 \keyword{package}
-
