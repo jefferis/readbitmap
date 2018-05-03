@@ -27,13 +27,15 @@ devtools::install_github('readbitmap','jefferis')
 
 Dependencies
 ------------
-The [jpeg](https://cran.r-project.org/package=jpeg) and 
-[png](https://cran.r-project.org/package=png) R packages depend on system
-libjpeg and libpng libraries.  These are pretty much always installed on unix
+The [jpeg](https://cran.r-project.org/package=jpeg),
+[png](https://cran.r-project.org/package=png), and 
+[tiff](https://cran.r-project.org/package=tiff) R packages depend on system
+libjpeg, libpng and libtiff libraries.  These are pretty much always installed on unix
 like systems (e.g. linux, macosx). Failing that, see:
 
   * http://www.libpng.org/
   * http://ijg.org/
+  * http://www.libtiff.org/
 
 For Windows, binary installs of the jpeg and png packages include the libjpeg
 and lipng available on winbuilder and therefore no system library is required.
