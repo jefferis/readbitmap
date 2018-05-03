@@ -1,0 +1,10 @@
+reference:
+- title: Package Help
+  desc: Provides an overview of the package
+  contents:
+  - '`readbitmap-package`'
+- title: Functions
+  desc: ~
+  contents:
+  - '`image_type`'
+  - '`read.bitmap`'
