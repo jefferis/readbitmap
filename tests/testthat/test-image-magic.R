@@ -27,3 +27,12 @@ test_that("image_type identifies jpgs", {
       expect_that(image_type("testdata/real.jpg"),
           equals('jpg'))
     })
+
+test_that("image_type identifies TIFFs", {
+  expect_that(image_type("testdata/real.tif"),
+              equals('tif'))
+  expect_that(image_type("testdata/real.tiff"),
+              equals('tif'))
+  expect_that(image_type("testdata/tiff-pretending-to-be.jpg"),
+              equals('tif'))
+})

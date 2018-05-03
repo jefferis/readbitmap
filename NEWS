@@ -1,3 +1,7 @@
+readbitmap 0.1-4.9000
+=====================
+* Added functionality for handling TIFFs. This addressed [#3](https://github.com/jefferis/readbitmap/issues/3).
+
 readbitmap 0.1-4
 ================
 * examples for image_type, read.bitmap

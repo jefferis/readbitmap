@@ -4,8 +4,9 @@ library(pixmap)
 library(jpeg)
 library(bmp)
 library(png)
+library(tiff)
 
-test_that("read.bitmap can load real bmp, jpg, png files", {
+test_that("read.bitmap can load real bmp, jpg, png, tif, tiff files", {
       imgfile="testdata/real.bmp"
       expect_that(read.bitmap(imgfile),
           equals(read.bmp(imgfile)),info='bmp problem')
@@ -15,7 +16,14 @@ test_that("read.bitmap can load real bmp, jpg, png files", {
       imgfile="testdata/real.png"
       expect_that(read.bitmap(imgfile),
           equals(readPNG(imgfile)),info='png problem')
-    })
+      imgfile="testdata/real.tif"
+      expect_that(read.bitmap(imgfile),
+                  equals(readTIFF(imgfile)),
+                  info='tif problem')
+      imgfile="testdata/real.tiff"
+      expect_that(read.bitmap(imgfile),
+                  equals(readTIFF(imgfile)),info='tif problem')
+})
 
 test_that("read.bitmap can load a bmp pretending to be a jpg", {
       jpgfile="testdata/bmp-pretending-to-be.jpg"
@@ -29,6 +37,12 @@ test_that("read.bitmap errors out loading fake bmp when identifying by extension
       expect_that(read.bitmap(jpgfile, IdentifyByExtension = TRUE),
           throws_error('Not a JPEG file'))
     })
+
+test_that("read.bitmap errors out loading fake jpg when identifying by extension", {
+  jpgfile="testdata/tiff-pretending-to-be.jpg"
+  expect_that(read.bitmap(jpgfile, IdentifyByExtension = TRUE),
+              throws_error('Not a JPEG file'))
+})
 
 test_that("read.bitmap errors out loading a pnm file (not implemented)", {
       imgfile="testdata/real.pnm"
@@ -54,3 +68,12 @@ test_that("read.bitmap can load a real bmp identified by extension", {
       expect_that(read.bitmap(imgfile, IdentifyByExtension = TRUE),
           equals(read.bmp(imgfile)))
     })
+
+test_that("read.bitmap can load a real tiff identified by extension", {
+  imgfile="testdata/real.tif"
+  expect_that(read.bitmap(imgfile, IdentifyByExtension = TRUE),
+              equals(readTIFF(imgfile)))
+  imgfile="testdata/real.tiff"
+  expect_that(read.bitmap(imgfile, IdentifyByExtension = TRUE),
+              equals(readTIFF(imgfile)))
+})

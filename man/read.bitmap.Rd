@@ -16,12 +16,12 @@ read.bitmap(f, channel, IdentifyByExtension = FALSE, ...)
 \item{...}{Additional parameters passed to underlying image readers}
 }
 \value{
-return value
+Objects returned by \code{\link[jpeg]{readJPEG}}, \code{\link[png]{readPNG}}, \code{\link[bmp]{read.bmp}}, or \code{\link[tiff]{readTIFF}}. See their documentation for details.
 }
 \description{
 By default uses magic byte to identify file 
   (rather than the file extension)
-Currently uses readers in bmp, jpeg and png packages.
+Currently uses readers in bmp, jpeg, png, and tiff packages.
 }
 \examples{
 img1=read.bitmap(system.file("img", "Rlogo.jpg", package="jpeg"))
@@ -31,5 +31,5 @@ img2 <- read.bitmap(system.file("img", "Rlogo.png", package="png"))
 str(img2)
 }
 \seealso{
-\code{\link[jpeg]{readJPEG},\link[png]{readPNG},\link[bmp]{read.bmp}}
+\code{\link[jpeg]{readJPEG}, \link[png]{readPNG}, \link[bmp]{read.bmp}, \link[tiff]{readTIFF}}
 }

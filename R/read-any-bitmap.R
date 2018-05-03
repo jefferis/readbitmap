@@ -3,14 +3,14 @@
 
 #' Identify the type of an image using the magic value at the start of the file 
 #'
-#' Currently works for png, jpeg and BMP images.
+#' Currently works for png, jpeg, BMP, and tiff images.
 #' Will seek to start of file if passed a connection.
 #' For details of magic values for files, see e.g. 
 #' http://en.wikipedia.org/wiki/Magic_number_(programming)#Magic_numbers_in_files
 #' @param source Path to file or connection
 #' @param Verbose Whether to write a message to console on failure (Default F)
 #' @return character value corresponding to standard file extension of 
-#'   image format (i.e. jpg, png, bmp) or NA_character_ on failure.
+#'   image format (i.e. jpg, png, bmp, tif) or NA_character_ on failure.
 #' @export
 #' @examples
 #' jpegfile=system.file("img", "Rlogo.jpg", package="jpeg")
@@ -30,7 +30,10 @@ image_type<-function(source,Verbose=FALSE){
     return('png')
   else if(isTRUE(all.equal(magic[1:2], c(0xFF, 0xD8))))
     return('jpg')
-  # otherwise we failed to identify the file
+  else if(isTRUE(all.equal(magic[1:4], c(0x49, 0x49, 0x2A, 0x00))))
+    return('tif')
+  else if(isTRUE(all.equal(magic[1:4], c(0x4D, 0x4D, 0x00, 0x2A))))
+    return('tif')  # otherwise we failed to identify the file
   if(Verbose) warning("Failed to identify image type of: ",source,
         ' with magic: ',format.hexmode(as.raw(magic)))
   return(NA_character_)
@@ -40,17 +43,18 @@ image_type<-function(source,Verbose=FALSE){
 #'
 #' By default uses magic byte to identify file 
 #'   (rather than the file extension)
-#' Currently uses readers in bmp, jpeg and png packages.
+#' Currently uses readers in bmp, jpeg, png, and tiff packages.
 #' @param f Path to image file
 #' @param channel Integer identifying channel to return for an RGB image
 #' @param IdentifyByExtension Identify by file extension only (Default FALSE)
 #' @param ... Additional parameters passed to underlying image readers
-#' @return return value
+#' @return Objects returned by \code{\link[jpeg]{readJPEG}}, \code{\link[png]{readPNG}}, \code{\link[bmp]{read.bmp}}, or \code{\link[tiff]{readTIFF}}. See their documentation for details.
 #' @importFrom png readPNG
 #' @importFrom jpeg readJPEG
 #' @importFrom bmp read.bmp
+#' @importFrom tiff readTIFF
 #' @export
-#' @seealso \code{\link[jpeg]{readJPEG},\link[png]{readPNG},\link[bmp]{read.bmp}}
+#' @seealso \code{\link[jpeg]{readJPEG}, \link[png]{readPNG}, \link[bmp]{read.bmp}, \link[tiff]{readTIFF}}
 #' @examples
 #' img1=read.bitmap(system.file("img", "Rlogo.jpg", package="jpeg"))
 #' str(img1)
@@ -67,7 +71,8 @@ read.bitmap<-function(f,channel,IdentifyByExtension=FALSE,...){
     ext=image_type(f)
   
   readfun=switch(ext,png=readPNG,jpeg=readJPEG,jpg=readJPEG,bmp=read.bmp,
-      stop("File f: ",f," does not appear to be a PNG, BMP or JPEG"))
+                 tif=readTIFF,tiff=readTIFF,
+                 stop("File f: ",f," does not appear to be a PNG, BMP, JPEG, or TIFF"))
   im=readfun(f,...)
   
   if(!missing(channel) && length(dim(im))==3) im=im[,,channel]
