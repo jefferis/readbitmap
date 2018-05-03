@@ -27,9 +27,8 @@
 <script src="../pkgdown.js"></script>
 <meta property="og:title" content="Identify the type of an image using the magic value at the start of the file — image_type" />
 
-<meta property="og:description" content="Currently works for png, jpeg, BMP, and tiff images.
-Will seek to start of file if passed a connection.
-For details of magic values for files, see e.g. 
+<meta property="og:description" content="Currently works for png, jpeg, BMP, and tiff images. Will seek to start of
+file if passed a connection. For details of magic values for files, see e.g.
 http://en.wikipedia.org/wiki/Magic_number_(programming)#Magic_numbers_in_files" />
 <meta name="twitter:card" content="summary" />
 
@@ -101,10 +100,9 @@ http://en.wikipedia.org/wiki/Magic_number_(programming)#Magic_numbers_in_files" 
     </div>
 
     
-    <p>Currently works for png, jpeg, BMP, and tiff images.
-Will seek to start of file if passed a connection.
-For details of magic values for files, see e.g. 
-http://en.wikipedia.org/wiki/Magic_number_(programming)#Magic_numbers_in_files</p>
+    <p>Currently works for png, jpeg, BMP, and tiff images. Will seek to start of
+file if passed a connection. For details of magic values for files, see e.g.
+<a href='http://en.wikipedia.org/wiki/Magic_number_(programming)#Magic_numbers_in_files'>http://en.wikipedia.org/wiki/Magic_number_(programming)#Magic_numbers_in_files</a></p>
     
 
     <pre class="usage"><span class='fu'>image_type</span>(<span class='no'>source</span>, <span class='kw'>Verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
@@ -118,14 +116,15 @@ http://en.wikipedia.org/wiki/Magic_number_(programming)#Magic_numbers_in_files</
     </tr>
     <tr>
       <th>Verbose</th>
-      <td><p>Whether to write a message to console on failure (Default F)</p></td>
+      <td><p>Whether to write a message to console on failure (Default
+<code>FALSE</code>)</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>character value corresponding to standard file extension of 
-  image format (i.e. jpg, png, bmp, tif) or NA_character_ on failure.</p>
+    <p>character value corresponding to standard file extension of image
+  format (i.e. jpg, png, bmp, tif) or <code>NA_character_</code> on failure.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>

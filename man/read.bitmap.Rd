@@ -2,7 +2,7 @@
 % Please edit documentation in R/read-any-bitmap.R
 \name{read.bitmap}
 \alias{read.bitmap}
-\title{Read in a bitmap image in JPEG, PNG or BMP format}
+\title{Read in a bitmap image in JPEG, PNG, BMP or TIFF format}
 \usage{
 read.bitmap(f, channel, IdentifyByExtension = FALSE, ...)
 }
@@ -16,12 +16,14 @@ read.bitmap(f, channel, IdentifyByExtension = FALSE, ...)
 \item{...}{Additional parameters passed to underlying image readers}
 }
 \value{
-Objects returned by \code{\link[jpeg]{readJPEG}}, \code{\link[png]{readPNG}}, \code{\link[bmp]{read.bmp}}, or \code{\link[tiff]{readTIFF}}. See their documentation for details.
+Objects returned by \code{\link[jpeg]{readJPEG}},
+  \code{\link[png]{readPNG}}, \code{\link[bmp]{read.bmp}}, or
+  \code{\link[tiff]{readTIFF}}. See their documentation for details.
 }
 \description{
-By default uses magic byte to identify file 
-  (rather than the file extension)
-Currently uses readers in bmp, jpeg, png, and tiff packages.
+By default uses magic bytes at the start of the file to identify the image
+type (rather than the file extension). Currently uses readers in bmp, jpeg,
+png, and tiff packages.
 }
 \examples{
 img1=read.bitmap(system.file("img", "Rlogo.jpg", package="jpeg"))
@@ -31,5 +33,7 @@ img2 <- read.bitmap(system.file("img", "Rlogo.png", package="png"))
 str(img2)
 }
 \seealso{
-\code{\link[jpeg]{readJPEG}, \link[png]{readPNG}, \link[bmp]{read.bmp}, \link[tiff]{readTIFF}}
+\code{\link{image_type}}, \code{\link[jpeg]{readJPEG}},
+  \code{\link[png]{readPNG}}, \code{\link[bmp]{read.bmp}},
+  \code{\link[tiff]{readTIFF}}
 }

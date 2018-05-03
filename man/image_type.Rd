@@ -9,17 +9,17 @@ image_type(source, Verbose = FALSE)
 \arguments{
 \item{source}{Path to file or connection}
 
-\item{Verbose}{Whether to write a message to console on failure (Default F)}
+\item{Verbose}{Whether to write a message to console on failure (Default
+\code{FALSE})}
 }
 \value{
-character value corresponding to standard file extension of 
-  image format (i.e. jpg, png, bmp, tif) or NA_character_ on failure.
+character value corresponding to standard file extension of image
+  format (i.e. jpg, png, bmp, tif) or \code{NA_character_} on failure.
 }
 \description{
-Currently works for png, jpeg, BMP, and tiff images.
-Will seek to start of file if passed a connection.
-For details of magic values for files, see e.g. 
-http://en.wikipedia.org/wiki/Magic_number_(programming)#Magic_numbers_in_files
+Currently works for png, jpeg, BMP, and tiff images. Will seek to start of
+file if passed a connection. For details of magic values for files, see e.g.
+\url{http://en.wikipedia.org/wiki/Magic_number_(programming)#Magic_numbers_in_files}
 }
 \examples{
 jpegfile=system.file("img", "Rlogo.jpg", package="jpeg")

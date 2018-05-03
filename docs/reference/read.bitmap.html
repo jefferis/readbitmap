@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Read in a bitmap image in JPEG, PNG or BMP format — read.bitmap • readbitmap</title>
+<title>Read in a bitmap image in JPEG, PNG, BMP or TIFF format — read.bitmap • readbitmap</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -25,11 +25,11 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-<meta property="og:title" content="Read in a bitmap image in JPEG, PNG or BMP format — read.bitmap" />
+<meta property="og:title" content="Read in a bitmap image in JPEG, PNG, BMP or TIFF format — read.bitmap" />
 
-<meta property="og:description" content="By default uses magic byte to identify file 
-  (rather than the file extension)
-Currently uses readers in bmp, jpeg, png, and tiff packages." />
+<meta property="og:description" content="By default uses magic bytes at the start of the file to identify the image
+type (rather than the file extension). Currently uses readers in bmp, jpeg,
+png, and tiff packages." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -95,14 +95,14 @@ Currently uses readers in bmp, jpeg, png, and tiff packages." />
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Read in a bitmap image in JPEG, PNG or BMP format</h1>
+    <h1>Read in a bitmap image in JPEG, PNG, BMP or TIFF format</h1>
     <small>Source: <a href='https://github.com/jefferis/readbitmap/blob/master/R/read-any-bitmap.R'><code>R/read-any-bitmap.R</code></a></small>
     </div>
 
     
-    <p>By default uses magic byte to identify file 
-  (rather than the file extension)
-Currently uses readers in bmp, jpeg, png, and tiff packages.</p>
+    <p>By default uses magic bytes at the start of the file to identify the image
+type (rather than the file extension). Currently uses readers in bmp, jpeg,
+png, and tiff packages.</p>
     
 
     <pre class="usage"><span class='fu'>read.bitmap</span>(<span class='no'>f</span>, <span class='no'>channel</span>, <span class='kw'>IdentifyByExtension</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)</pre>
@@ -130,11 +130,15 @@ Currently uses readers in bmp, jpeg, png, and tiff packages.</p>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Objects returned by <code><a href='http://www.rdocumentation.org/packages/jpeg/topics/readJPEG'>readJPEG</a></code>, <code><a href='http://www.rdocumentation.org/packages/png/topics/readPNG'>readPNG</a></code>, <code><a href='http://www.rdocumentation.org/packages/bmp/topics/read.bmp'>read.bmp</a></code>, or <code><a href='http://www.rdocumentation.org/packages/tiff/topics/readTIFF'>readTIFF</a></code>. See their documentation for details.</p>
+    <p>Objects returned by <code><a href='http://www.rdocumentation.org/packages/jpeg/topics/readJPEG'>readJPEG</a></code>,
+  <code><a href='http://www.rdocumentation.org/packages/png/topics/readPNG'>readPNG</a></code>, <code><a href='http://www.rdocumentation.org/packages/bmp/topics/read.bmp'>read.bmp</a></code>, or
+  <code><a href='http://www.rdocumentation.org/packages/tiff/topics/readTIFF'>readTIFF</a></code>. See their documentation for details.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><code><a href='http://www.rdocumentation.org/packages/jpeg/topics/readJPEG'>readJPEG</a>, <a href='http://www.rdocumentation.org/packages/png/topics/readPNG'>readPNG</a>, <a href='http://www.rdocumentation.org/packages/bmp/topics/read.bmp'>read.bmp</a>, <a href='http://www.rdocumentation.org/packages/tiff/topics/readTIFF'>readTIFF</a></code></p>
+    <p><code><a href='image_type.html'>image_type</a></code>, <code><a href='http://www.rdocumentation.org/packages/jpeg/topics/readJPEG'>readJPEG</a></code>,
+  <code><a href='http://www.rdocumentation.org/packages/png/topics/readPNG'>readPNG</a></code>, <code><a href='http://www.rdocumentation.org/packages/bmp/topics/read.bmp'>read.bmp</a></code>,
+  <code><a href='http://www.rdocumentation.org/packages/tiff/topics/readTIFF'>readTIFF</a></code></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
