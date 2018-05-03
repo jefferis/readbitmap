@@ -1,8 +1,11 @@
+# readbitmap
 [![Build Status](https://travis-ci.org/jefferis/readbitmap.svg)](https://travis-ci.org/jefferis/readbitmap)
 [![CRAN status](http://www.r-pkg.org/badges/version/readbitmap)](https://cran.r-project.org/package=readbitmap)
 
-Introduction
-============
+## Introduction
+
+See http://jefferis.github.io/readbitmap for online documentation.
+
   * Simple R package to read bitmap images
   * Currently supports BMP, JPEG, PNG and TIFF images
   * ... via [bmp](https://cran.r-project.org/package=bmp), [jpeg](https://cran.r-project.org/package=jpeg), [png](https://cran.r-project.org/package=png), and
@@ -11,23 +14,22 @@ Introduction
     (standard file extensions can also be used)
   * Includes simple test suite
 
-Installation
-============
-Regular CRAN Install
---------------------
+## Installation
+
+### Regular CRAN Install
+
 ```r
 install.packages('readbitmap')
 ```
 
-Latest Version
---------------
+### Latest Version
+
 ```r
 if (!require("devtools")) install.packages("devtools")
-devtools::install_github('readbitmap','jefferis')
+devtools::install_github('jefferis/readbitmap')
 ```
 
-Dependencies
-------------
+## Dependencies
 The [jpeg](https://cran.r-project.org/package=jpeg),
 [png](https://cran.r-project.org/package=png), and 
 [tiff](https://cran.r-project.org/package=tiff) R packages depend on system
