@@ -1,8 +1,11 @@
 Package: readbitmap
-Maintainer: Gregory Jefferis <jefferis@gmail.com>
 License: GPL (>=2)
 Title: Simple Unified Interface to Read Bitmap Images (BMP,JPEG,PNG,TIFF)
-Author: Gregory Jefferis
+Authors@R: c(
+    person("Gregory","Jefferis", email="jefferis@gmail.com", 
+    role = c("aut", "cre"), comment = c(ORCID = "0000-0002-0587-9355")),
+    person("Derek", "Ogle", role = c("ctb"))
+    )
 Description: Identifies and reads Windows BMP, JPEG, PNG, and TIFF format bitmap
     images. Identification defaults to the use of the magic number embedded in
     the file rather than the file extension. Reading of JPEG and PNG image
