@@ -4,9 +4,12 @@
 
 ## Introduction
 
-See http://jefferis.github.io/readbitmap for online documentation.
+**readbitmap** is a simple R package that provides a function `read.bitmap` to read
+standard bitmap format images, identifying them by their image header 
+(or [magic value](https://en.wikipedia.org/wiki/Magic_number_(programming)#Magic_numbers_in_files))
+rather than relying on the file extension.
 
-  * Simple R package to read bitmap images
+  * See http://jefferis.github.io/readbitmap for online documentation.
   * Currently supports BMP, JPEG, PNG and TIFF images
   * ... via [bmp](https://cran.r-project.org/package=bmp), [jpeg](https://cran.r-project.org/package=jpeg), [png](https://cran.r-project.org/package=png), and
   [tiff](https://cran.r-project.org/package=tiff) packages. 
