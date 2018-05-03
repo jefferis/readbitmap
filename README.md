@@ -3,8 +3,9 @@ Introduction
 [![Build Status](https://travis-ci.org/jefferis/readbitmap.svg)](https://travis-ci.org/jefferis/readbitmap)
 
   * Simple R package to read bitmap images
-  * Currently supports BMP, JPEG and PNG images
-  * ... via [bmp](https://cran.r-project.org/package=bmp), [jpeg](https://cran.r-project.org/package=jpeg) and [png](https://cran.r-project.org/package=png) packages. 
+  * Currently supports BMP, JPEG, PNG and TIFF images
+  * ... via [bmp](https://cran.r-project.org/package=bmp), [jpeg](https://cran.r-project.org/package=jpeg), [png](https://cran.r-project.org/package=png), and
+  [tiff](https://cran.r-project.org/package=tiff) packages. 
   * includes function to identify images by magic values 
     (standard file extensions can also be used)
   * Includes simple test suite
