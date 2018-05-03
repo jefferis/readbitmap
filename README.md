@@ -4,7 +4,7 @@ Introduction
 
   * Simple R package to read bitmap images
   * Currently supports BMP, JPEG and PNG images
-  * ... via [bmp](http://cran.r-project.org/web/packages/bmp/), [jpeg](http://cran.r-project.org/web/packages/jpeg/) and [png](http://cran.r-project.org/web/packages/png/) packages. 
+  * ... via [bmp](https://cran.r-project.org/package=bmp), [jpeg](https://cran.r-project.org/package=jpeg) and [png](https://cran.r-project.org/package=png) packages. 
   * includes function to identify images by magic values 
     (standard file extensions can also be used)
   * Includes simple test suite
@@ -26,8 +26,8 @@ devtools::install_github('readbitmap','jefferis')
 
 Dependencies
 ------------
-The [jpeg](http://cran.r-project.org/web/packages/jpeg/) and 
-[png](http://cran.r-project.org/web/packages/png/) R packages depend on system
+The [jpeg](https://cran.r-project.org/package=jpeg) and 
+[png](https://cran.r-project.org/package=png) R packages depend on system
 libjpeg and libpng libraries.  These are pretty much always installed on unix
 like systems (e.g. linux, macosx). Failing that, see:
 
