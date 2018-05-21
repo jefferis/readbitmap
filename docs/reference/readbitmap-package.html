@@ -21,10 +21,15 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+
+
+
 <meta property="og:title" content="readbitmap: read standard bitmap image formats — readbitmap-package" />
 
 <meta property="og:description" content="The readbitmap package enables users to read the three main general purpose 
@@ -36,6 +41,7 @@ image type of a file using appropriate magic values encoded in the
 first few bytes of the image header. Images can therefore have any file
 extension." />
 <meta name="twitter:card" content="summary" />
+
 
 
 <!-- mathjax -->
@@ -90,6 +96,7 @@ extension." />
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -97,28 +104,31 @@ extension." />
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>readbitmap: read standard bitmap image formats</h1>
-    <small>Source: <a href='https://github.com/jefferis/readbitmap/blob/master/R/readbitmap-package.R'><code>R/readbitmap-package.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/jefferis/readbitmap/blob/master/R/readbitmap-package.R'><code>R/readbitmap-package.R</code></a></small>
+    <div class="hidden name"><code>readbitmap-package.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>The readbitmap package enables users to read the three main general purpose 
 bitmap image formats (jpeg, png, bmp) without having to specify the image 
 type directly. This is provided by a single function 
-<code><a href='read.bitmap.html'>read.bitmap</a></code>, which uses a second function 
-<code><a href='image_type.html'>image_type</a></code>, which is also exported for users, to identify the 
+<code>read.bitmap</code>, which uses a second function 
+<code>image_type</code>, which is also exported for users, to identify the 
 image type of a file using appropriate <em>magic</em> values encoded in the 
 first few bytes of the image header. Images can therefore have any file
 extension.</p>
     
+    </div>
 
         
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><code><a href='image_type.html'>image_type</a></code>, <code><a href='read.bitmap.html'>read.bitmap</a></code></p>
+    <div class='dont-index'><p><code>image_type</code>, <code>read.bitmap</code></p></div>
     
 
   </div>
@@ -143,6 +153,8 @@ extension.</p>
 
       </footer>
    </div>
+
+  
 
   </body>
 </html>
