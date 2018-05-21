@@ -79,13 +79,13 @@ read.bitmap<-function(f,channel,IdentifyByExtension=FALSE,...){
                  stop("File f: ",f," does not appear to be a PNG, BMP, JPEG, or TIFF"))
   im=readfun(f,...)
   
-    if(!missing(channel) && length(dim(im))==3) im=im[,,channel]
-    #BMP stores the alpha channel first (ARGB order), convert to RGBA for consistency with PNG files
-    if (ext=="bmp" && (length(dim(im))==3) && dim(im)[3] == 4)
-    {
-        att <- attributes(im)
-        im <- array(c(im[,,2:4],im[,,1]),dim(im))
-        attributes(im) <- att
-    }
+  if(!missing(channel) && length(dim(im))==3) im=im[,,channel]
+  #BMP stores the alpha channel first (ARGB order), convert to RGBA for consistency with PNG files
+  if (ext=="bmp" && (length(dim(im))==3) && dim(im)[3] == 4)
+  {
+    att <- attributes(im)
+    im <- array(c(im[,,2:4],im[,,1]),dim(im))
+    attributes(im) <- att
+  }
   im
 }
